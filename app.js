@@ -41,7 +41,6 @@ boxes.forEach((box) => {
 
         let iswinner = checkWinner();
 
-        // ✅ Only declare draw if no winner
         if (!iswinner && count === 9) {
             gameDraw();
         }
@@ -82,13 +81,14 @@ const checkWinner = () => {
         if (pos1val !== "" && pos2val !== "" && pos3val !== "") {
             if (pos1val === pos2val && pos2val === pos3val) {
                 showWinner(pos1val);
-                return true; // ✅ winner found
+                return true;
             }
         }
     }
-    return false; // ✅ no winner
+    return false;
 };
 
 newGamebtn.addEventListener("click", resetGame);
 resetbtn.addEventListener("click", resetGame);
+
 
